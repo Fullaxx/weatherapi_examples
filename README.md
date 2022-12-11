@@ -12,3 +12,9 @@ export LOCATION="new-york-new-york-united-states-of-america"
 ./bash_timezone.sh
 ./bash_sports.sh
 ```
+
+# Searching for locations
+```
+export APIKEY="<YOURAPIKEY>"
+./search_IATA.sh
+```
