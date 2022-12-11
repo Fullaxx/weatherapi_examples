@@ -1,5 +1,5 @@
 # weatherapi_examples
-Example code for using the weatherapi service
+Example code for using the [weatherapi.com](https://www.weatherapi.com/) service
 
 ## Bash Examples
 ```
