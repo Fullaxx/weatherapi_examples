@@ -2,6 +2,7 @@
 #define _GNU_SOURCE
 #else
 #define _XOPEN_SOURCE 700
+#error cant use fgets() without determining a buffer size
 #endif
 
 #include <stdio.h>
@@ -58,19 +59,21 @@ static void process_stdin(void)
 	if(line) { free(line); }
 }
 
+static void process_file(char *filename)
+{
+	printf("Processing %s ...\n", filename);
+}
+
 /*	If we have nothing to process on the command line,
-	Then process a json from stdin
+	Then process json from stdin
 */
 int main(int argc, char *argv[])
 {
-	//init_hash_table();
-
 	if(argc == 1) {
 		process_stdin();
 	} else {
-		while(--argc > 0) { /*process_file(argv[argc]);*/ }
+		while(--argc > 0) { process_file(argv[argc]); }
 	}
 
-	//destroy_hash_table();
 	return 0;
 }
