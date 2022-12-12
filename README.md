@@ -13,8 +13,17 @@ export LOCATION="new-york-new-york-united-states-of-america"
 ./bash_sports.sh
 ```
 
-# Searching for locations
+## Searching for locations
 ```
 export APIKEY="<YOURAPIKEY>"
 ./search_IATA.sh
+```
+
+## Reformatting the JSON output
+```
+./compile.sh
+
+export APIKEY="<YOURAPIKEY>"
+export LOCATION="los-angeles-california-united-states-of-america"
+./bash_forecast.sh | ./json_formatter.exe | less
 ```
