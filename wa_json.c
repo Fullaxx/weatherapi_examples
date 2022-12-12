@@ -29,6 +29,7 @@ static void process_forecast_forecast(cJSON *root)
 void process_forecast(char *json)
 {
 	cJSON *root = cJSON_Parse(json);
+	if(!root) { return; }
 	process_forecast_location(root);
 	process_forecast_current(root);
 	process_forecast_forecast(root);
@@ -40,6 +41,7 @@ void process_forecast(char *json)
 void print_reformatted_json(char *json)
 {
 	cJSON *root = cJSON_Parse(json);
+	if(!root) { return; }
 	char *fjson = cJSON_Print(root);
 	printf("%s\n", fjson);
 	cJSON_Delete(root);
