@@ -1,6 +1,7 @@
 #include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
 #include "cJSON.h"
 
@@ -18,12 +19,16 @@ static void process_forecast_location(cJSON *root)
 
 static void process_forecast_current(cJSON *root)
 {
-	//cJSON *current_obj = cJSON_GetObjectItem(root, "current");
+/*
+	cJSON *current_obj = cJSON_GetObjectItem(root, "current");
+*/
 }
 
 static void process_forecast_forecast(cJSON *root)
 {
-	//cJSON *forecast_obj = cJSON_GetObjectItem(root, "forecast");
+/*
+	cJSON *forecast_obj = cJSON_GetObjectItem(root, "forecast");
+*/
 }
 
 void process_forecast(char *json)
@@ -33,8 +38,10 @@ void process_forecast(char *json)
 	process_forecast_location(root);
 	process_forecast_current(root);
 	process_forecast_forecast(root);
-	//char *fjson = cJSON_Print(root);
-	//printf("%s\n", fjson);
+/*
+	char *fjson = cJSON_Print(root);
+	printf("%s\n", fjson);
+*/
 	cJSON_Delete(root);
 }
 

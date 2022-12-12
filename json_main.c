@@ -24,7 +24,7 @@ static void chomp(char *buf)
 
 static void handle_input(char *input)
 {
-	//printf("%s\n", input);
+	/*printf("%s\n", input);*/
 
 #ifdef DO_REFORMAT
 	print_reformatted_json(input);

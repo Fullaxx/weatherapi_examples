@@ -2,7 +2,8 @@
 
 set -e
 
-CFLAGS="-Wall -ansi -std=c99"
+# -std=c99
+CFLAGS="-Wall -ansi"
 CFLAGS+=" -DUSE_GETLINE"
 OPTCFLAGS="${CFLAGS} -O2"
 DBGCFLAGS="${CFLAGS} -ggdb3 -DDEBUG"
