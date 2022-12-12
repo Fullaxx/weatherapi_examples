@@ -1,4 +1,4 @@
-# weatherapi_examples
+# WeatherAPI.com Usage
 Example code for using the [weatherapi.com](https://www.weatherapi.com/) service
 
 ## Examples using bash scripting
