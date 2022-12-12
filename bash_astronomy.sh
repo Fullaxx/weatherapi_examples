@@ -7,12 +7,12 @@ if [ -z "${APIKEY}" ]; then
 fi
 
 if [ -z "${APIKEY}" ]; then
-  echo "APIKEY must be set in order to use this script!"
+  >&2 echo "APIKEY must be set in order to use this script!"
   exit 1
 fi
 
 if [ -z "${LOCATION}" ]; then
-  echo "LOCATION must be set in order to use this script!"
+  >&2 echo "LOCATION must be set in order to use this script!"
   exit 2
 fi
 
