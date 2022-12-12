@@ -22,6 +22,19 @@ static void chomp(char *buf)
 	}
 }
 
+static void handle_input(char *input)
+{
+	//printf("%s\n", input);
+
+#ifdef DO_REFORMAT
+	print_reformatted_json(input);
+#endif
+
+#ifdef DO_FORECAST
+	process_forecast(input);
+#endif
+}
+
 static void process_stdin(void)
 {
 #ifdef USE_GETLINE
@@ -47,8 +60,7 @@ static void process_stdin(void)
 #endif
 
 		chomp(line);
-		//printf("%s\n", line);
-		print_reformatted_json(line);
+		handle_input(line);
 		free(line);
 		line = NULL;
 	}
