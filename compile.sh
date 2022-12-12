@@ -13,4 +13,8 @@ gcc ${OPTCFLAGS}         json_formatter.c wa_json.c cJSON.c -o json_formatter.ex
 gcc ${DBGCFLAGS}         json_formatter.c wa_json.c cJSON.c -o json_formatter.dbg
 gcc ${OPTCFLAGS} -static json_formatter.c wa_json.c cJSON.c -o json_formatter.static.exe
 
+gcc ${OPTCFLAGS}         process_forecast.c wa_json.c cJSON.c -o process_forecast.exe
+gcc ${DBGCFLAGS}         process_forecast.c wa_json.c cJSON.c -o process_forecast.dbg
+gcc ${OPTCFLAGS} -static process_forecast.c wa_json.c cJSON.c -o process_forecast.static.exe
+
 strip *.exe
