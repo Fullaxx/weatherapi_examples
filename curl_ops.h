@@ -1,5 +1,5 @@
 /*
-	wa_get is a command-line utility to retrieve JSON weather data  
+	wa_get is a command-line utility to retrieve JSON weather data
 	Copyright (C) 2022 Brett Kuskie <fullaxx@gmail.com>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
