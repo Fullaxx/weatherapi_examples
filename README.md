@@ -1,5 +1,6 @@
 # WeatherAPI.com Usage
-Example code for using the [weatherapi.com](https://www.weatherapi.com/) service
+Example code for using the [weatherapi.com](https://www.weatherapi.com/) service. \
+API Documentation can be found [here](https://www.weatherapi.com/docs/).
 
 ## Requirements for C Code
 First we need to make sure we have all the appropriate libraries. \
