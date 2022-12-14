@@ -20,4 +20,9 @@ gcc ${OPTCFLAGS}         ${ACTION} json_main.c wa_json.c cJSON.c -o process_fore
 gcc ${DBGCFLAGS}         ${ACTION} json_main.c wa_json.c cJSON.c -o process_forecast.dbg
 gcc ${OPTCFLAGS} -static ${ACTION} json_main.c wa_json.c cJSON.c -o process_forecast.static.exe
 
+CURLCFLAGS=`curl-config --cflags`
+CURLLIBS=`curl-config --libs`
+gcc ${OPTCFLAGS} ${CURLCFLAGS} wa_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o wa_get.exe
+gcc ${DBGCFLAGS} ${CURLCFLAGS} wa_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o wa_get.dbg
+
 strip *.exe
