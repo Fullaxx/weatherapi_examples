@@ -22,7 +22,7 @@ gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c wa_json.c cJSON.c -o process_fo
 
 CURLCFLAGS=`curl-config --cflags`
 CURLLIBS=`curl-config --libs`
-gcc ${OPTCFLAGS} ${CURLCFLAGS} wa_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o wa_get.exe
-gcc ${DBGCFLAGS} ${CURLCFLAGS} wa_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o wa_get.dbg
+gcc ${OPTCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o get_forecast.exe
+gcc ${DBGCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o get_forecast.dbg
 
 strip *.exe

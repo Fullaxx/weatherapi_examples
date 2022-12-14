@@ -1,5 +1,5 @@
 /*
-	wa_get is a command-line utility to retrieve JSON weather data  
+	get_forecast is a command-line utility to retrieve JSON weather data
 	Copyright (C) 2022 Brett Kuskie <fullaxx@gmail.com>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,7 @@ static void parse_args(int argc, char **argv);
 char *g_apikey = NULL;
 char *g_location = NULL;
 
-static int get_page(void)
+static int get_forecast_page(void)
 {
 	int retval = 0;
 	char url[2048];
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 	int retval;
 
 	parse_args(argc, argv);
-	retval = get_page();
+	retval = get_forecast_page();
 
 	if(g_apikey) { free(g_apikey); }
 	if(g_location) { free(g_location); }
