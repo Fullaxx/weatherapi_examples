@@ -37,11 +37,6 @@ static void parse_args(int argc, char **argv);
 char *g_apikey = NULL;
 char *g_location = NULL;
 
-static void handle_page(curlresp_t *r)
-{
-	printf("%s\n", r->page);
-}
-
 static int get_page(void)
 {
 	int retval = 0;
@@ -60,7 +55,7 @@ static int get_page(void)
 			fprintf(stderr, "HTTP Error %ld: %s\n", resp.http_code, resp.page);
 			retval = 4;
 		} else {
-			handle_page(&resp);
+			printf("%s\n", resp.page);
 		}
 	}
 
