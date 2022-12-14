@@ -1,6 +1,17 @@
 # WeatherAPI.com Usage
 Example code for using the [weatherapi.com](https://www.weatherapi.com/) service
 
+## Requirements for C Code
+First we need to make sure we have all the appropriate libraries. \
+Please consult this chart for help with installing the required packages. \
+If your OS is not listed, please help us fill out the table, or submit a request via github.
+
+| OS     | Commands (as root)                                               |
+| ------ | ---------------------------------------------------------------- |
+| Alpine | `apk add build-base bash gnutls`                                 |
+| Debian | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
+| Ubuntu | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
+
 ## Examples using bash scripting
 ```
 export APIKEY="<YOURAPIKEY>"
