@@ -11,14 +11,14 @@ DBGCFLAGS="${CFLAGS} -ggdb3 -DDEBUG"
 rm -f *.exe *.dbg
 
 ACTION="-DDO_REFORMAT"
-gcc ${OPTCFLAGS}         ${ACTION} json_reader.c wa_json.c cJSON.c -o json_formatter.exe
-gcc ${DBGCFLAGS}         ${ACTION} json_reader.c wa_json.c cJSON.c -o json_formatter.dbg
-gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c wa_json.c cJSON.c -o json_formatter.static.exe
+gcc ${OPTCFLAGS}         ${ACTION} json_reader.c json_output.c cJSON.c -o json_formatter.exe
+gcc ${DBGCFLAGS}         ${ACTION} json_reader.c json_output.c cJSON.c -o json_formatter.dbg
+gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c json_output.c cJSON.c -o json_formatter.static.exe
 
 ACTION="-DDO_FORECAST"
-gcc ${OPTCFLAGS}         ${ACTION} json_reader.c wa_json.c cJSON.c -o process_forecast.exe
-gcc ${DBGCFLAGS}         ${ACTION} json_reader.c wa_json.c cJSON.c -o process_forecast.dbg
-gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c wa_json.c cJSON.c -o process_forecast.static.exe
+gcc ${OPTCFLAGS}         ${ACTION} json_reader.c json_output.c cJSON.c -o process_forecast.exe
+gcc ${DBGCFLAGS}         ${ACTION} json_reader.c json_output.c cJSON.c -o process_forecast.dbg
+gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c json_output.c cJSON.c -o process_forecast.static.exe
 
 CURLCFLAGS=`curl-config --cflags`
 CURLLIBS=`curl-config --libs`

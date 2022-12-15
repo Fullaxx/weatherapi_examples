@@ -1,5 +1,5 @@
 /*
-	A command-line utility to process JSON weather data
+	A collection of functions to process JSON weather data
 	Copyright (C) 2022 Brett Kuskie <fullaxx@gmail.com>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
