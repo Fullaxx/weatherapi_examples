@@ -33,9 +33,11 @@
 #include "curl_ops.h"
 
 static void parse_args(int argc, char **argv);
+void print_temp_csv(char *json, int is_f);
 
 char *g_apikey = NULL;
 char *g_location = NULL;
+int g_fahrenheit = 0;
 
 static int get_forecast_page(void)
 {
@@ -44,7 +46,7 @@ static int get_forecast_page(void)
 	curlresp_t resp;
 
 	memset(&resp, 0, sizeof(curlresp_t));
-	snprintf(&url[0], sizeof(url), "http://api.weatherapi.com/v1/forecast.json?key=%s&q=%s&days=10&aqi=yes&alerts=yes", g_apikey, g_location);
+	snprintf(&url[0], sizeof(url), "http://api.weatherapi.com/v1/forecast.json?key=%s&q=%s&days=3&aqi=yes&alerts=yes", g_apikey, g_location);
 
 	int z = ws_curl_get(url, &resp);
 	if(z) {
@@ -55,7 +57,8 @@ static int get_forecast_page(void)
 			fprintf(stderr, "HTTP Error %ld: %s\n", resp.http_code, resp.page);
 			retval = 4;
 		} else {
-			printf("%s\n", resp.page);
+			/*printf("%s\n", resp.page); */
+			print_temp_csv(resp.page, g_fahrenheit);
 		}
 	}
 
@@ -77,9 +80,10 @@ int main(int argc, char *argv[])
 
 struct options opts[] = 
 {
-	{ 1, "apikey",		"APIKEY to use",	"K",  1 },
-	{ 2, "location",	"LOCATION to use",	"L",  1 },
-	{ 0, NULL,			NULL,				NULL, 0 }
+	{ 1, "apikey",		"APIKEY to use",				"K",  1 },
+	{ 2, "location",	"LOCATION to use",				"L",  1 },
+	{ 3, "fahrenheit",	"Display Temps in Fahrenheit",	"f",  0 },
+	{ 0, NULL,			NULL,							NULL, 0 }
 };
 
 static void parse_args(int argc, char **argv)
@@ -103,6 +107,9 @@ static void parse_args(int argc, char **argv)
 				break;
 			case 2:
 				g_location = strdup(args);
+				break;
+			case 3:
+				g_fahrenheit = 1;
 				break;
 			default:
 				fprintf(stderr, "Unexpected getopts Error! (%d)\n", c);

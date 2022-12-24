@@ -40,3 +40,14 @@ export LOCATION="los-angeles-california-united-states-of-america"
 ./bash_forecast.sh | ./json_formatter.exe | less
 ./bash_forecast.sh | ./process_forecast.exe
 ```
+
+## Create a CSV of forecast temps
+```
+./compile.sh
+
+export APIKEY="<YOURAPIKEY>"
+export LOCATION="chicago-illinois-united-states-of-america"
+
+./forecast2csv.exe    | less
+./forecast2csv.exe -f | less
+```

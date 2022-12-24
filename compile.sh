@@ -22,7 +22,7 @@ gcc ${OPTCFLAGS} -static ${ACTION} json_reader.c json_output.c cJSON.c -o proces
 
 CURLCFLAGS=`curl-config --cflags`
 CURLLIBS=`curl-config --libs`
-gcc ${OPTCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o get_forecast.exe
-gcc ${DBGCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c ${CURLLIBS} -o get_forecast.dbg
+gcc ${OPTCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c cJSON.c csv_output.c ${CURLLIBS} -o forecast2csv.exe
+gcc ${DBGCFLAGS} ${CURLCFLAGS} get_forecast.c getopts.c curl_ops.c cJSON.c csv_output.c ${CURLLIBS} -o forecast2csv.dbg
 
 strip *.exe
