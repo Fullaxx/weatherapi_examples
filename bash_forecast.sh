@@ -16,5 +16,5 @@ if [ -z "${LOCATION}" ]; then
   exit 2
 fi
 
-curl -s "http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${LOCATION}&days=10&aqi=yes&alerts=yes"
+curl -s "http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${LOCATION}&days=3&aqi=yes&alerts=yes"
 echo
