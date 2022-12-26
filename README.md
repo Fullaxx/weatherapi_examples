@@ -9,7 +9,7 @@ If your OS is not listed, please help us fill out the table, or submit a request
 
 | OS     | Commands (as root)                                               |
 | ------ | ---------------------------------------------------------------- |
-| Alpine | `apk add build-base bash gnutls`                                 |
+| Alpine | `apk add build-base bash curl-dev git gnutls`                    |
 | Debian | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
 | Ubuntu | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
 
