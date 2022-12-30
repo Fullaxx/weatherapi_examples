@@ -7,11 +7,11 @@ First we need to make sure we have all the appropriate libraries. \
 Please consult this chart for help with installing the required packages. \
 If your OS is not listed, please help us fill out the table, or submit a request via github.
 
-| OS     | Commands (as root)                                               |
-| ------ | ---------------------------------------------------------------- |
-| Alpine | `apk add build-base bash curl-dev git gnutls`                    |
-| Debian | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
-| Ubuntu | `apt update; apt install -y build-essential libcurl4-gnutls-dev` |
+| OS     | Commands (as root)                                                |
+| ------ | ----------------------------------------------------------------- |
+| Alpine | `apk add build-base bash curl-dev git`                            |
+| Debian | `apt update; apt install -y build-essential libcurl4-openssl-dev` |
+| Ubuntu | `apt update; apt install -y build-essential libcurl4-openssl-dev` |
 
 ## Examples using bash scripting
 ```
